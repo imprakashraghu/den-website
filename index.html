@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Den | Password Manager Cli Tool</title>
+    <link rel="icon" href="assets/images/logo.ico">
+    <meta name="description" content="Free password manager cli tool">
+    <meta name="keywords" content="Nodejs, Javascript, cli, html, css, tailwind, commander, free">
+    <meta name="author" content="Hemaprakash Raghu">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="assets/css/termynal.css" type="text/css" rel="stylesheet">
+</head>
+<style>
+     @media only screen and (max-width: 340px) {
+        [data-termynal] {        
+            max-width: 280px;
+        }
+    }
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+    .logo{
+        font-family: 'Quicksand', sans-serif;
+    }
+    #termynal{     
+        font-size: 0.8em;
+        width: 400px;
+    }
+</style>
+<body>
+    <div class="px-8 py-4 w-full flex items-center">
+        <img class="h-16 border rounded-lg bg-white shadow-md sm:h-12" src="assets/images/logo.png">
+        <p class="logo px-5 text-3xl font-bold">den</p>
+    </div>
+    <div class="h-screen grid grid-flow py-5 sm:grid-flow-row md:grid-flow-col-dense lg:grid-flow-row-dense xl:grid-flow-col">
+        <div class="p-20 sm:h-64 md:h-64 bg-white flex flex-col justify-start">
+            <p class="text-base font-black sm:text-lg md:text-lg lg:text-xl xl:text-2xl">Stop remembering passwords</p>            
+            <p class="text-sm sm:text-sm md:text-sm lg:text-md xl:text-md">a password manager cli</p>
+            <p class="mt-2 text-xs bg-red-600 rounded-full text-white text-center w-16">v 1.0.0</p>
+            <button class="mt-4 inline-flex items-center lg:w-4/6 md:w-4/6 xl:w-4/6 bg-black text-white hover:bg-red-500 text-white font-bold py-2 px-4 border-b-4 border-red-600 hover:border-red-600 rounded"><svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg> Download for Windows</button>
+        </div>
+        <div class="h-auto bg-white flex items-center justify-center sm:py-2 md:py-2">
+            <img class="px-6 h-auto" src="assets/images/bg_img.svg">
+        </div>
+    </div>
+    <div class="h-auto grid grid-flow p-20 sm:px-10 md:px-12 sm:grid-flow-row md:grid-flow-col-dense lg:grid-flow-row-dense xl:grid-flow-col">
+        <div class="bg-white flex items-center justify-center py-4">
+            <div class="border-2 rounded-lg shadow-lg flex flex-col items-center justify-center p-12">
+                <img class="h-20" src="assets/images/lock.svg">
+                <p class="text-base text-center font-bold py-4">Data are encrypted</p>                
+            </div>
+            <div class="border">
+                    
+            </div>
+        </div>
+        <div class="bg-white flex items-center justify-center py-4">
+            <div class="border-2 rounded-lg shadow-lg flex flex-col items-center justify-center p-12">
+                <img class="h-20" src="assets/images/origin.svg">
+                <p class="text-base text-center font-bold py-4">No more third party</p>
+            </div>
+        </div>
+        <div class="bg-white flex items-center justify-center py-4">
+            <div class="border-2 rounded-lg shadow-lg flex flex-col items-center justify-center p-12">
+                <img class="h-20" src="assets/images/cmd.png">
+                <p class="text-base text-center font-bold py-4">Use with your CMD</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-auto w-full grid grid-flow py-5 sm:grid-flow-row md:grid-flow-col-dense lg:grid-flow-row-dense xl:grid-flow-col">
+        <div class="h-full flex items-center justify-center">
+            <div id="termynal"  data-termynal data-ty-typeDelay="20" data-ty-lineDelay="1000">
+                <span data-ty="input">den init</span>
+                <span data-ty>Master Name: </span>
+                <span data-ty="input" data-ty-prompt="?">john doe</span>
+                <span data-ty>Master Password: </span>
+                <span data-ty="input" data-ty-prompt="?">****</span>   
+                <span data-ty>Security Question: </span>         
+                <span data-ty="input" data-ty-prompt="?">What's your pet name?</span>            
+                <span data-ty>Security Answer: </span>
+                <span data-ty="input" data-ty-prompt="?">Bob</span>
+                <span data-ty>Confirm Initialization (y/n): </span>
+                <span data-ty="input" data-ty-prompt="?">y</span>                       
+                <span data-ty>Den initialized successfully</span>                            
+            </div>
+        </div>
+        <div class="px-2 h-full flex flex-col items-center justify-center py-4">
+            <h2 class="text-2xl font-black">cli commands</h2>
+            <p class="text-sm font-light mb-4">here all the available commands in the den</p>
+            <div class="h-100 flex items-center justify-center sm:flex-col md:flex-col lg:flex-col xl:flex-col">
+                <div class="grid sm:px-4 md:px-6 lg:px-8 grid-flow sm:grid-flow-row md:grid-flow-col-dense lg:grid-flow-row-dense xl:grid-flow-col">
+                    <div class="w-full border shadow-md p-4 text-left">
+                        <p class="text-base font-bold">init</p>
+                        <p class="text-sm font-light">Initializes the storage of den</p>
+                    </div>
+                    <div class="w-full border shadow-md p-4 text-left">
+                        <p class="text-base font-bold">master</p>
+                        <p class="text-sm font-light">Access data as master user</p>
+                    </div>
+                    <div class="w-full border shadow-md p-4 text-left">
+                        <p class="text-base font-bold">store</p>
+                        <p class="text-sm font-light">Store passwords safely</p>
+                    </div>  
+                                              
+                </div>            
+                <div class="grid sm:px-4 md:px-6 lg:px-8 grid-flow sm:grid-flow-row md:grid-flow-col-dense lg:grid-flow-row-dense xl:grid-flow-col">
+                    <div class="w-full border shadow-md p-4 text-left">
+                        <p class="text-base font-bold">open</p>
+                        <p class="text-sm font-light">View all the password safely</p>
+                    </div>
+                    <div class="w-full border shadow-md p-4 text-left">
+                        <p class="text-base font-bold">destroy</p>
+                        <p class="text-sm font-light">Deletes entire den storage</p>
+                    </div>
+                    <div class="w-full border shadow-md p-4 text-left">
+                        <p class="text-base font-bold">help</p>
+                        <p class="text-sm font-light">know helper command</p>
+                    </div>  
+                                              
+                </div> 
+            </div>                      
+        </div>
+    </div>
+    <div class="h-64 px-4 w-full flex flex-col items-center justify-center">
+        <p class="w-full text-base text-2xl text-center sm:text-md md:text-md font-black">Don't forget to add den to your path</p>
+        <p class="text-sm text-center py-2">add the bin folder path to your enivronmental variable</p>        
+    </div>
+    <div class="h-56 w-full text-center flex flex-col items-center justify-center">        
+        <div class="w-full flex justify-center py-4">
+            <img class="h-16 border rounded-lg bg-white shadow-md sm:h-12" src="assets/images/logo.png">
+            <p class="logo px-5 text-3xl font-bold">den</p>            
+        </div>
+        <div class="w-full flex items-center justify-center">
+            <a href="mailto:denapp@protonmail.com"><img src="assets/images/emailicon.png" class="h-6"></a>
+            <a href="https://github.com/prakashjaw/den"><img src="assets/images/giticon.svg" class="h-6 px-4"></a>
+        </div>
+        <p class="text-sm py-1">Released under <a href="https://github.com/prakashjaw/den-website/blob/master/LICENSE">MIT License</a></p>
+        <p class="text-xs">Icons by <a href="https://icons8.com">Icons8</a></p>
+        <p class="text-xs py-1">Hosted by <a href="https://zeit.com">Zeit</a> &#128293;</p>
+    </div>
+    <script src="assets/js/termynal.js" data-termynal-container="#termynal"></script>
+</body>
+<script>
+    
+
+    window.onload = function() {   
+       
+         cmdAnimate();
+       
+    }
+
+    function cmdAnimate() {
+        var termynal = new Termynal('#termynal');        
+        var terminal = document.getElementById('termynal');
+        var denstore = `<span data-ty="input">den store</span>
+                <span data-ty>Master Password: </span>                
+                <span data-ty="input" data-ty-prompt="?">****</span>   
+                <span data-ty>Account Type: </span>         
+                <span data-ty="input" data-ty-prompt="?">gmail</span>            
+                <span data-ty>Property: </span>
+                <span data-ty="input" data-ty-prompt="?">johndoe@example.com</span> 
+                <span data-ty>Password: </span>
+                <span data-ty="input" data-ty-prompt="?">******</span> 
+                <span data-ty>Are you sure to store it (y/n): </span>
+                <span data-ty="input" data-ty-prompt="?">y</span>                      
+                <span data-ty>Password stored successfully</span>`;      
+                setTimeout(function() {
+            terminal.innerHTML = "";
+            terminal.innerHTML = denstore;
+            termynal = new Termynal('#termynal'); 
+        },20000);
+        
+         
+            var denmaster = `<span data-ty="input">den master</span>
+                <span data-ty>Master Password: </span>                
+                <span data-ty="input" data-ty-prompt="?">****</span>   
+                <span data-ty>Profile</span>                                   
+                <span data-ty>?Storage</span>                
+                <span data-ty>Change Master Password</span>                
+                <span data-ty>DEN STORAGE</span>
+                <span data-ty>PASSWORD STORED: 1</span>
+                <span data-ty>FORMAT: ENCRYPTED</span>`;
+                setTimeout(function() {
+            terminal.innerHTML = "";
+            terminal.innerHTML = denmaster;
+            termynal = new Termynal('#termynal');
+        },40000);                
+        var denopen = `<span data-ty="input">den open</span>
+                <span data-ty>Master Password: </span>                
+                <span data-ty="input" data-ty-prompt="?">****</span>   
+                <span data-ty>Select a prop</span>                                   
+                <span data-ty>?johndoe@example.com</span> 
+                <span data-y></span>                               
+                <span data-ty>Account Type: gmail</span>                
+                <span data-ty>PASSWORD: ******</span>
+                <span data-ty>Password copied to clipboard!</span>`;
+                setTimeout(function() {
+            terminal.innerHTML = "";
+            terminal.innerHTML = denopen;
+            termynal = new Termynal('#termynal');
+        },60000);
+        var dendestroy = `<span data-ty="input">den destroy</span>
+                <span data-ty>Master Password: </span>                
+                <span data-ty="input" data-ty-prompt="?">****</span>                  
+                <span data-ty>Den Storage succesffully!</span>`;
+                setTimeout(function() {
+            terminal.innerHTML = "";
+            terminal.innerHTML = dendestroy;
+            termynal = new Termynal('#termynal');
+        },80000);
+
+        var denopen = `<span data-ty="input">den init</span>
+                <span data-ty>Master Name: </span>
+                <span data-ty="input" data-ty-prompt="?">john doe</span>
+                <span data-ty>Master Password: </span>
+                <span data-ty="input" data-ty-prompt="?">****</span>   
+                <span data-ty>Security Question: </span>         
+                <span data-ty="input" data-ty-prompt="?">What's your pet name?</span>            
+                <span data-ty>Security Answer: </span>
+                <span data-ty="input" data-ty-prompt="?">Bob</span>
+                <span data-ty>Confirm Initialization (y/n): </span>
+                <span data-ty="input" data-ty-prompt="?">y</span>                       
+                <span data-ty>Den initialized successfully</span>`;
+                setTimeout(function() {
+            terminal.innerHTML = "";
+            terminal.innerHTML = denopen;
+            termynal = new Termynal('#termynal');
+        },100000);
+    }
+
+</script>
+</html>
